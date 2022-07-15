@@ -40,6 +40,32 @@ public class ClickMeBabyForiDry {
 
   }
 
+  @Test
+  public void verifySklonovani() {
+    driver.get(BASE_URL);
+    Assert.assertEquals("Iniciální počet kliků", "0", driver.findElement(By.id("clicks")).getText());
+    //System.out.println(driver.findElement(By.cssSelector(".description")).getText());
+    Assert.assertEquals("klikov", driver.findElement(By.cssSelector(".description")).getText());
+    System.out.println("Ověřuju slovo klikov");
+
+    for (int i = 1; i < 21; i++) {
+      driver.findElement(By.id("clickMe")).click();
+      Assert.assertEquals(String.valueOf(i), driver.findElement(By.id("clicks")).getText());
+      if (i == 1) {
+        Assert.assertEquals("klik", driver.findElement(By.cssSelector(".description")).getText());
+        System.out.println("Ověřuju slovo klik");
+      }
+      if (i >= 2 && i <= 4) {
+        Assert.assertEquals("kliky", driver.findElement(By.cssSelector(".description")).getText());
+        System.out.println("Ověřuju slovo kliků");
+      }
+      if (i > 4) {
+        Assert.assertEquals("klikov", driver.findElement(By.cssSelector(".description")).getText());
+        System.out.println("Ověřuju slovo klikov");
+      }
+    }
+  }
+
   @After
   public void tearDown() {
     driver.quit();
