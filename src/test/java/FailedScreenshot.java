@@ -11,11 +11,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileStore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class failScreenshot {
+public class FailedScreenshot {
   private WebDriver driver;
   private Map<String, Object> vars;
   private final String BASE_URL = "https://furbo.sk/playground/vybersi.php";
@@ -45,7 +44,8 @@ public class failScreenshot {
   public void tearDown() throws IOException {
     File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     FileUtils.copyFileToDirectory(screenShot, new File("/Users/simonurych/IdeaProjects/SeleniumTutorialBasicJava18/Screenshots"));
-    driver.getPageSource();
+
+    driver.close();
     driver.quit();
   }
 }
