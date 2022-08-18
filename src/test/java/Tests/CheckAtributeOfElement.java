@@ -1,4 +1,6 @@
-import org.junit.After;
+package Tests;
+
+import Base.MainTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +14,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class CheckAtributeOfElement {
+public class CheckAtributeOfElement extends MainTest {
     private   WebDriver driver;
     private final String BASE_URL = "https://furbo.sk/playground/registracia.php";
     private String validEmail = "urych.s@gmail.com";
@@ -48,12 +50,5 @@ public class CheckAtributeOfElement {
         driver.findElement(By.className("btn-success")).click();
         assertThat(driver.findElement(By.className("alert-danger")).getText(), is(failHlaska));
         driver.navigate().refresh();
-    }
-
-    @After
-    public void tearDown (){
-        driver.close();
-        driver.quit();
-
     }
 }
