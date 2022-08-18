@@ -1,3 +1,6 @@
+package Tests;
+
+import Base.MainTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class RegistrationComplete {
+public class RegistrationComplete extends MainTest {
     private   WebDriver driver;
     private final String BASE_URL = "https://furbo.sk/playground/registracia.php";
     private String validEmail = "urych.s@gmail.com";
