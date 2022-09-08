@@ -1,6 +1,6 @@
-package Tests;
+package tests;
 
-import Base.MainTest;
+import base.MainTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

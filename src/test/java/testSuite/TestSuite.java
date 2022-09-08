@@ -1,6 +1,6 @@
-package TestSuite;
+package testSuite;
 
-import Tests.*;
+import tests.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
