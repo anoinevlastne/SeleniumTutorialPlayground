@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SeleniumTutorialBasicJava18" />
+        <module name="SeleniumTutorialPlayground" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SeleniumTutorialBasicJava18" target="1.7" />
+      <module name="SeleniumTutorialPlayground" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
